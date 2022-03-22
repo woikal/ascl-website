@@ -1,0 +1,27 @@
+# IDEs
+/.idea
+/.vscode
+
+# build
+/node_modules
+/vendor
+/public/hot
+/public/storage
+
+#runtime
+bootstrap/cache/
+storage/framework/sessions/
+
+#config
+/storage/*.key
+.env
+.env.backup
+
+#dev
+docker-compose.override.yml
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+storage/logs/
