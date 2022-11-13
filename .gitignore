@@ -5,8 +5,11 @@
 # build
 /node_modules
 /vendor
-/public/hot
-/public/storage
+/public
+public/
+!public/index.php
+!public/.htaccess
+!public/robots.txt
 
 #runtime
 bootstrap/cache/

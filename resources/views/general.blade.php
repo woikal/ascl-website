@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed@1&display=swap" rel="stylesheet">
 
-    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
 
 <nav id="main-navigation" class="wrapper">
     <div class="main-navigation">
-        <img src="/img/site-logo.png" alt="Vereinslogo des Airsoft Sport Club Linz">
+        <img src="{{ asset('/img/site-logo.png') }}" alt="Vereinslogo des Airsoft Sport Club Linz">
         <ul>
             <li><a href="#">Link 1</a></li>
             <li><a href="#">Gallerie</a></li>
@@ -41,7 +41,12 @@
     @endif
 
 </header>
-
+<nav class="card-navigation">
+    <div class="card-link"></div>
+    <div class="card-link"></div>
+    <div class="card-link"></div>
+    <div class="card-link"></div>
+</nav>
 <main id="content" class="content wrapper">
     <div>
         @section('content')
@@ -149,7 +154,7 @@
     <p class="copyright">&copy; ASCL {{ today()->year }} - All rights reserved</p>
 </footer>
 
-<script src="/js/site.js"></script>
+<script src="{{ asset('/js/site.js') }}"></script>
 </body>
 
 </html>
