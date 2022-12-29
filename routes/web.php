@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\EventRegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,16 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('general');
-});
+    return view('layout.general');
+})->name('home', 'home');
 
-Route::prefix('/event')->group(function () {
-    Route::get('/', [EventRegistrationController::class, 'index'])->name('event.registrations');
-    Route::get('/{event}/register', function () {
-        return view('event.registration.create');
-    });
-    Route::get('/register', function () {
-        return view('event.registration.form');
-    })->name('registration.show');
-    Route::post('/register', [EventRegistrationController::class, 'update'])->name('registration.store');
-});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__ . '/auth.php';

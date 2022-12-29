@@ -21,7 +21,7 @@ class EventRegistrationController extends Controller
      */
     public function create()
     {
-        //
+        return view('event.registration.create')->with( ['registration' => Registration::create(['event' => 0])]);
     }
 
     /**
