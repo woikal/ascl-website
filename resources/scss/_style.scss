@@ -1,182 +1,92 @@
-:root {
-  --col-primary: #37281c;
-  --col-secondary: #7b7272;
-  --col-special: #ffffff;
-  --col-highlight: #c81e1e;
-  --bg-primary: #ffffff;
-  --bg-secondary: #f3e8e8;
-  --bg-special: #251414;
-
-  --header-height: 120px;
-}
 
 * {
-  box-sizing: border-box
-}
-
-.wrapper > * {
-  margin: 0 auto;
-  max-width: 1200px;
-  padding: 0 1rem;
+    box-sizing: border-box
 }
 
 html body {
-  margin: 0;
-  background-color: var(--bg-special);
-  color: var(--col-primary);
-  font-family: "Roboto", sans-serif;
+    margin: 0;
+    background-color: var(--col-primary);
+    color: var(--col-primary-inv);
+    font-family: "Roboto Light", sans-serif;
 }
 
-#main-navigation {
-  position: absolute;
-  width: 100%;
-
-  &.scrolled {
-    position: fixed;
-    background-color: var(--bg-special)
-
-  }
-}
-
-.main-navigation {
-  max-height: var(--header-height);
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  padding: 1em;
-  color: var(--col-special) img {
-    display: block;
-  }
-
-  ul {
-    list-style: none;
-
-    ul {
-    }
-  }
-
-  li {
-    display: inline-block;
-
-    li {
-    }
-  }
+.container {
+    margin: 0 auto;
+    max-width: 1400px;
+    padding: 0 1rem;
 }
 
 
 .footer-navigation {
-  display: flex;
-  justify-content: center;
-  border: 1px solid var(--bg-special);
-  border-left: 0 none;
-  border-right: 0 none;
-  color: rgb(130, 130, 130);
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--bg-special);
+    border-left: 0 none;
+    border-right: 0 none;
+    color: rgb(130, 130, 130);
 
-  ul {
-    padding: 0
-  }
+    ul {
+        padding: 0
+    }
 
-  li {
-    display: inline-block;
-    list-style: none;
-  }
+    li {
+        display: inline-block;
+        list-style: none;
+    }
 }
 
 .skip2content {
-  left: 50%;
-  position: absolute;
-  transform: translateY(-100%);
-
-  background: var(--bg-special);
-  height: 30px;
-  padding: 8px;
-  transition: transform 0.3s;
-
-  &:focus {
-    transform: translateY(0%);
-  }
-}
-
-.go-top {
-  display: none;
-  position: fixed;
-  bottom: 1em;
-  right: 1em;
-  height: 40px;
-  width: 40px;
-  justify-content: center;
-  align-items: center;
-  background: var(--col-highlight);
-  color: var(--col-special);
-  text-decoration: none;
-
-
-  &::before {
-    display: none;
-    transition: width 400ms ease-in-out;
+    left: 50%;
     position: absolute;
-    left: 0;
-    content: "";
-    height: 40px;
-    width: 0;
+    transform: translateY(-100%);
+
     background: var(--bg-special);
-  }
+    height: 30px;
+    padding: 8px;
+    transition: transform 0.3s;
 
-  &:hover::before {
-    width: 40px;
-  }
-
-  &::after {
-    display: none;
-    content: "^";
-    z-index: 1;
-  }
-
-  &.show {
-    display: flex;
-
-    &::before,
-    &::after {
-      display: block;
+    &:focus {
+        transform: translateY(0%);
     }
-  }
 }
 
-.page-heading {
-  background: url("../img/page-header-default.jpg") rgb(30, 160, 40);
-  color: var(--col-primary);
-  padding: calc(var(--header-height) + 3em) 2em 3em;
+
+.site-heading {
+    background: url("../img/page-header-default.jpg") rgb(30, 160, 40);
+    color: var(--col-primary);
+    padding: calc(var(--header-height) + 3em) 2em 3em;
 }
 
 .footer {
-  background-color: var(--bg-special);
-  color: var(--col-special);
+    background-color: var(--bg-special);
+    color: var(--col-special);
 }
 
 .content {
-  background: var(--bg-primary);
+    background: var(--bg-primary);
+    position: relative;
 }
 
 .copyright {
-  display: flex;
-  justify-content: center;
-  padding: 1.5em 1em;
+    display: flex;
+    justify-content: center;
+    padding: 1.5em 1em;
 }
 
 .form-field, .form-group {
-  padding: 0 20%;
-  margin-bottom: 1em;
+    padding: 0 20%;
+    margin-bottom: 1em;
 }
 
 .form-field > * {
-  width: 100%;
+    width: 100%;
 }
 
 .form-group {
-  display: flex;
+    display: flex;
 
-  .form-field {
-    padding: 0;
-    max-width: 50%;
-  }
+    .form-field {
+        padding: 0;
+        max-width: 50%;
+    }
 }

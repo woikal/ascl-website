@@ -1,0 +1,45 @@
+
+.go-top {
+    display: none;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background: var(--col-special);
+    color: var(--col-special-inv);
+    text-decoration: none;
+
+
+    &::before {
+        display: none;
+        transition: width 400ms ease-in-out;
+        position: absolute;
+        left: 0;
+        content: "";
+        height: 40px;
+        width: 0;
+        background: var(--bg-special);
+    }
+
+    &:hover::before {
+        width: 40px;
+    }
+
+    &::after {
+        display: none;
+        content: "^";
+        z-index: 1;
+    }
+
+    &.show {
+        display: flex;
+
+        &::before,
+        &::after {
+            display: block;
+        }
+    }
+}

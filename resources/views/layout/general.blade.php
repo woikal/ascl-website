@@ -1,56 +1,36 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 
-<head>
-    <title>@yield('title') - Airsoft Sport Club Linz</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed@1&display=swap" rel="stylesheet">
-
-    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-</head>
+@include('layout._head')
 
 <body>
 
 <a class="skip2content" href="#content">Weiter zum Seiteninhalt</a>
 
-<nav id="main-navigation" class="wrapper">
-    <div class="main-navigation">
-        <img src="{{ asset('/img/site-logo.png') }}" alt="Vereinslogo des Airsoft Sport Club Linz">
-        <ul>
-            <li><a href="#">Link 1</a></li>
-            <li><a href="#">Gallerie</a></li>
-            <li><a href="#">Airsoft</a></li>
-            <li><a href="#">Events</a></li>
-        </ul>
+@include('layout._navigation-top')
+
+
+<header class="site-heading">
+    <div class="container">
+        <h2>@yield('title')</h2>
+
+        @hasSection('subtitle')
+            <p>@yield('subtitle')</p>
+        @endif
     </div>
-</nav>
-
-<a id="back-to-top" class="go-top" href="#top"></a>
-
-<header class="page-heading">
-
-    <h2>@yield('title')</h2>
-
-    @hasSection('subtitle')
-        <p>@yield('subtitle')</p>
-    @endif
-
 </header>
-<nav class="card-navigation">
-    <div class="card-link"></div>
-    <div class="card-link"></div>
-    <div class="card-link"></div>
-    <div class="card-link"></div>
-</nav>
-<main id="content" class="content wrapper">
-    <div>
+
+<main class="content">
+
+    <nav class="card-navigation container">
+        <a href="{{ route('home') }}" class="card-link">Airsoft</a>
+        <a href="{{ route('home') }}" class="card-link">Der Verein</a>
+        <a href="{{ route('home') }}" class="card-link">Veranstaltungen</a>
+    </nav>
+
+    <section class="container">
         @section('content')
-            <section>
+            <nav class="cards">
 
                 Main page content
                 <h1>Cards</h1>
@@ -72,7 +52,7 @@
                         <p class="teaser">Some description ...</p>
                     </a>
                 </div>
-            </section>
+            </nav>
             <section>
 
                 <h1>H1 Headline</h1>
@@ -137,10 +117,10 @@
             <section>
                 <h2>Form elements</h2>
 
-                @include('_general.form-elements.all')
+                @include('layout.form-elements.all')
             </section>
         @show
-    </div>
+    </section>
 </main>
 
 <footer class="footer">
@@ -153,6 +133,8 @@
     </nav>
     <p class="copyright">&copy; ASCL {{ today()->year }} - All rights reserved</p>
 </footer>
+
+<a class="back-to-top go-top" href="#top"></a>
 
 <script src="{{ asset('/js/site.js') }}"></script>
 </body>

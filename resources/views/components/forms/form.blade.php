@@ -5,7 +5,7 @@
     quis efficitur ac, tincidunt sit amet lacus.</p>
 
 <form>
-    @slot('')
+    {{ $slot }} }}
         <div class="mb-1 row">
             <div class="col-sm-4 pt-sm-1">
                 <p class="form-text text-sm">

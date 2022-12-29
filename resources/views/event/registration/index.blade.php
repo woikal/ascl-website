@@ -1,4 +1,4 @@
-@extends('general')
+@extends('layout.general')
 
 @section('title', __('Eventanmeldungen'))
 

@@ -1,0 +1,22 @@
+.card-navigation {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: -2rem;
+  margin-bottom: 2rem;
+
+  padding: 0 10rem;
+}
+
+.card-link {
+  min-height: 8rem;
+  width: 20%;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border: 2px solid violet;
+}
+
+.card {
+  display: block;
+  flex: 33% 20% 1;
+}

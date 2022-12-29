@@ -1,6 +1,28 @@
+
+:root {
+    --col-primary: hsl(1, 5%, 10%);
+    --col-primary-inv: hsl(1, 5%, 80%);
+    --col-secondary: hsl(1, 5%, 40%);
+    --col-secondary-inv: hsl(1, 5%, 90%);
+    --col-special: hsl(1, 80%, 30%);
+    --col-special-inv: hsl(1, 10%, 70%);
+
+    --header-height: 120px;
+}
+
 // laravel/breeze authentication
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @import 'style';
+@import 'header';
+@import 'go-top';
+@import 'footer';
+@import 'card-navigation';
 @import 'cards';
+
+// DEVELOPMENT
+div, nav, ul, header {
+    border: 1px dotted hsl(20, 100%, 50%);
+}
