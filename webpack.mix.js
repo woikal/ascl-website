@@ -11,8 +11,17 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/site.js', 'public/js');
+mix
+    .copy('resources/img', 'public/img')
 
-mix.sass('resources/scss/app.scss', 'public/css', [])
+    .js('resources/js/site.js', 'public/js')
 
-mix.copy('resources/img', 'public/img');
+    .sass('resources/scss/app.scss', 'public/css', [])
+    .sass('resources/scss/admin.scss', 'public/css', [])
+
+    .sourceMaps()
+
+//    .browserSync({
+//        proxy: 'ascl.test',
+//        files: ['**/*.html', '**/*.scss', '**/*.js']
+//    })

@@ -1,0 +1,104 @@
+
+:root {
+    --col-primary: hsl(1, 5%, 10%);
+    --col-primary-inv: hsl(1, 5%, 80%);
+    --col-secondary: hsl(1, 5%, 40%);
+    --col-secondary-inv: hsl(1, 5%, 90%);
+    --col-special: hsl(1, 80%, 30%);
+    --col-special-inv: hsl(1, 10%, 70%);
+
+    --header-height: 120px;
+}
+
+// laravel/breeze authentication
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'header';
+@import 'go-top';
+@import 'footer';
+@import 'card-navigation';
+@import 'cards';
+
+// DEVELOPMENT
+div, nav, ul, header {
+    outline: 1px dotted hsl(20, 100%, 50%);
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+.content {
+    margin-left: 200px;
+    min-height: 1vh;
+}
+
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
+.top {
+    display: flex;
+    justify-content: end;
+
+    a {
+        display: inline-block;
+        padding: 1rem 2rem;
+
+        &:hover {
+            background: teal
+        }
+    }
+}
+
+.main {
+    padding: 1rem;
+}
