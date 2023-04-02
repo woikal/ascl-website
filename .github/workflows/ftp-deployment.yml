@@ -1,0 +1,39 @@
+name: FTP Deployment
+
+on:
+  push:
+    branches:
+      - deployment
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libpng-dev libzip-dev
+          docker-php-ext-install pdo_mysql gd zip
+          curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+          composer install --prefer-dist --no-interaction
+
+      - name: Build Assets
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+          npm install
+          npm run production
+
+      - name: Deploy to FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server_dir: "/"
+          local_dir: "."
+          exclude: ".git* .env storage/logs vendor"
