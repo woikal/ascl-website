@@ -8,6 +8,18 @@
 
 @section('content')
 
+    <x-form.form action="register">
+        <div class="form-row">
+            <x-form.input name="forename" value="{{ $registration->forename }}"/>
+            <x-form.input name="surname" value="{{ $registration->surname }}"/>
+        </div>
+        <x-form.date name="birthday" value="{{ $registration->surname }}"/>
+        <x-form.input name="club" value="{{ $registration->club }}"/>
+        <x-form.date name="club" value="{{ $registration->date }}"/>
+        <x-form.static-text value="{{ $registration->date }}"/>
+        <x-form.textarea name="comment" value="{{ $registration->club }}"/>
+    </x-form.form>
+
     <div class="form-field">
         <label for="name">{{ __('Vorname') }}</label>
         <input type="text" id="name" name="name">

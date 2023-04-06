@@ -1,59 +1,58 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<x-auth-layout>
+    <x-slot name="logo">
+        <a href="/"><img src="{{ asset('/img/site-logo.png') }}"
+                         alt="{{ __('Vereinslogo des Airsoft Sport Club Linz') }}"
+            ></a>
+    </x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors"/>
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+    <x-form method="POST" :action="route('register')">
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+        <!-- Name -->
+        <x-form-group inline="true">
+            <x-form-input label="{{ __('Vorname') }}"
+                          name="forename"
+                          floating="true" required autofocus/>
+            <x-form-input label="{{ __('Familienname') }}"
+                          name="surname"
+                          floating="true" required autofocus/>
+        </x-form-group>
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
-            </div>
-
+        <x-form-group inline="true" class="mt-2">
             <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
+            <x-form-input label="{{ __('Email') }}" type="email" name="email"
+                          floating="true" required/>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
+            <!-- Email nickname -->
+            <x-form-input label="{{ __('Spitzname') }}"
+                          name="name"
+                          floating="true" required autofocus/>
+        </x-form-group>
 
+
+        <x-form-group inline="true" class="mt-4">
             <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
+            <x-form-input label="{{ __('Passwort') }}"
+                          type="password"
+                          name="password"
+                          floating="true" required autocomplete="new-password"/>
 
             <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+            <x-form-input label="{{ __('Passwort wiederholen') }}"
+                          type="password"
+                          name="password_confirmation"
+                          floating="true" required/>
+        </x-form-group>
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
+        <x-form-submit class="mt-2">
+            {{ __('Registrieren') }}
+        </x-form-submit>
 
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
+        <a href="{{ route('login') }}">
+            {{ __('Schon registriert?') }}
+        </a>
 
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+    </x-form>
+</x-auth-layout>

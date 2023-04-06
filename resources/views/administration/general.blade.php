@@ -14,6 +14,8 @@
     </nav>
 
     <main class="main">
+        <h2>@yield('title')</h2>
+
         @section('content')
         @show
     </main>

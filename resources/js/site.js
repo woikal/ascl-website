@@ -1,5 +1,5 @@
 let header = document.getElementsByClassName('top-navigation')[0];
-let totop = document.getElementsByClassName('back-to-top')[0];
+let totop = document.getElementsByClassName('go-top')[0];
 
 document.addEventListener('scroll',
     e => {

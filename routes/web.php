@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LocationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-require __DIR__ . '/auth.php';
-require __DIR__ . '/administration.php';
-
 Route::get('/', function () {
     return view('layout.general');
-})->name('home', 'home');
+})->name('home');
 
+Route::resource('locations', LocationController::class);
+Route::resource('events', LocationController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
+require __DIR__.'/auth.php';
