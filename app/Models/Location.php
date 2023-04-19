@@ -15,16 +15,15 @@ class Location extends Model
         'description',
         'external_link',
         'max_players',
-        'address',
-        'zipcode',
-        'city',
-        'country',
-        'longitude',
-        'latitude',
     ];
 
     public function events(): Relation
     {
         return $this->hasMany(Event::class);
+    }
+
+    public function address(): Relation
+    {
+        return $this->morph(Address::class, 'addressable');
     }
 }

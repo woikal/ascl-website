@@ -21,12 +21,6 @@ class CreateEventsTables extends Migration
             $table->string('description');
             $table->string('external_link')->nullable();
             $table->string('max_players')->nullable();
-            $table->string('address');
-            $table->integer('zipcode');
-            $table->string('city');
-            $table->string('country');
-            $table->decimal('longitude', 12, 3);
-            $table->decimal('latitude', 12, 3);
             $table->boolean('hidden')->default(false);
         });
 
