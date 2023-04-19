@@ -1,14 +1,11 @@
 @extends('layout.general')
 
-@section('title', __('Eventanmeldung'))
+@section('title', __('Veranstaltung erstellen'))
 
-@isset($event)
-    @section('subtitle', $event->name.', '.$event->date->format(__('d. M Y')))
-@endif
 
 @section('content')
 
-    <x-form.form action="register">
+    <x-form.form action="event.store">
         <div class="form-row">
             <x-form.input name="forename" value="{{ $registration->forename }}"/>
             <x-form.input name="surname" value="{{ $registration->surname }}"/>
