@@ -1,0 +1,29 @@
+@use "sass:math" as math;
+
+@mixin hexify($width) {
+    $width_2: calc($width / 2);
+    $sqrt_w: $width_2 * math.sqrt(2);
+
+    width: $width;
+    height: ($width_2 * math.sqrt(2));
+
+    &::before, &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: $width;
+        height: $sqrt_w;
+        border: solid transparent;
+        border-width: calc($width_2 / 2) $width_2;
+    }
+
+    &:before {
+        border-bottom-color: var(--col-special);
+        top: -$sqrt_w;
+    }
+
+    &:after {
+        border-top-color: var(--col-special);
+        bottom: -$sqrt_w;
+    }
+}

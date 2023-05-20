@@ -25,8 +25,8 @@ class AddUsersDetails extends Migration
 
 
         User::firstOrCreate(['name' => 'system'], [
-            'email'             => env('APP_DEFAULT_EMAIL', 'admin@example.com'),
-            'password'          => env('APP_DEFAULT_PASSWORD', 'passw0rd'),
+            'email'             => config('app.default_email', 'admin@example.com'),
+            'password'          => config('app.default_password', 'passw0rd'),
             'email_verified_at' => now(),
         ]);
     }

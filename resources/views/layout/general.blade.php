@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="de-DE">
 
-@include('layout._head')
+@include('layout.head')
 
 <body>
 
 <a class="skip2content" href="#content">Weiter zum Seiteninhalt</a>
 
-@include('layout._navigation-top')
-
+@include('layout.navigation-top')
 
 <header class="site-heading">
     <div class="container">
@@ -123,18 +122,9 @@
     </section>
 </main>
 
-<footer class="footer">
-    <nav class="footer-navigation wrapper">
-        <ul>
-            <li><a href="#">Media</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Imprint</a></li>
-        </ul>
-    </nav>
-    <p class="copyright">&copy; ASCL {{ today()->year }} - All rights reserved</p>
-</footer>
+@include('layout.footer')
 
-<a class="back-to-top go-top" href="#top"></a>
+<a class="go-top" href="#top">^</a>
 
 <script src="{{ asset('/js/site.js') }}"></script>
 </body>

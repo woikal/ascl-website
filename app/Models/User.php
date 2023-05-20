@@ -53,4 +53,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->morphMany(Address::class, 'addressable');
     }
+
+    public function memberships(): Relation
+    {
+        return $this->hasMany(Membership::class);
+    }
+
+    public function capacities(): Relation
+    {
+        return $this->hasManyThrought(Capacity::class, Membership::class);
+    }
 }
