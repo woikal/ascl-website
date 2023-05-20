@@ -20,6 +20,8 @@ Route::get('/', function () {
     return view('layout.general');
 })->name('home', 'home');
 
+Route::resource('locations', LocationController::class);
+Route::resource('events', LocationController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
