@@ -24,11 +24,21 @@
 
             <div class="col-12">
                 <x-form-submit>Speichern</x-form-submit>
+
+                <button type="submit" form="destroy"
+                        value="X"
+                        class="btn btn-danger">
+                    <i class="bi bi-eye">löschen</i></button>
             </div>
         </div>
 
 
         @endbind
     </x-form>
+
+    <form action="{{ route('teams.destroy', ['team'=> $team]) }}" method="POST" id="destroy">
+        @csrf
+        @method('DELETE')
+    </form>
 
 @endsection

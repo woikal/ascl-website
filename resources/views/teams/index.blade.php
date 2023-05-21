@@ -19,46 +19,38 @@
         <tbody>
         @forelse($teams as $team)
             <tr>
-                <td>{{ $team->akronym }}</td>
+                <td>{{ $team->acronym }}</td>
                 <td>{{ $team->name }}</td>
                 <td>{{ $team->zvr ?? __('unbekannt') }}</td>
                 <td>{{-- $team->participants()->count ?? '-' --}}</td>
                 <td>
-                    @dump($team)
-                    @if($team->show)
-                        <form action="{{ route('teams.hide', ['team'=> $team]) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <input type="hidden" name="show" value="0">
+                    <div class="btn-group" role="group">
+                        @if($team->show)
                             <button type="submit"
-                                    value="hide"
-                                    class="btn btn-primary">
-                                <i class="bi bi-eye"></i></button>
-                        </form>
-                    @else
-                        <form action="{{ route('teams.show', ['team'=> $team]) }}" method="POST">
-                            @csrf
-                            @method('PATCH')
-                            <input type="hidden" name="show" value="1">
+                                    form="visibility"
+                                    value="toggle"
+                                    class="btn btn-warning">
+                                <i class="bi bi-eye">ausblenden</i></button>
+                        @else
                             <button type="submit"
+                                    form="visibility"
                                     value="show"
-                                    class="btn btn-outline-primary">
-                                <i class="bi bi-eye"></i></button>
-                        </form>
-                    @endif
+                                    class="btn btn-outline-warning">
+                                <i class="bi bi-eye">einblenden</i></button>
+                        @endif
 
-                    <a href="{{ route('teams.edit', ['team'=> $team]) }}"
-                       class="btn btn-outline-primary">
-                        <i class="bi bi-pen"></i></a>
-
-
-                    <form action="{{ route('teams.destroy', ['team'=> $team]) }}" method="POST">
+                        <a href="{{ route('teams.edit', ['team'=> $team]) }}"
+                           class="btn btn-outline-primary">
+                            <i class="bi bi-pen">bearbeiten</i></a>
+                    </div>
+                    <form action="{{ route('teams.visibility', ['team'=> $team]) }}" method="POST" id="visibility">
                         @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                                value="X"
-                                class="btn btn-danger">
-                            <i class="bi bi-eye"></i></button>
+                        @method('PATCH')
+                        @if($team->show)
+                            <input type="hidden" name="show" value="0">
+                        @else
+                            <input type="hidden" name="show" value="1">
+                        @endif
                     </form>
                 </td>
             </tr>
@@ -71,4 +63,5 @@
     </table>
 
     <a href="{{ route('teams.create') }}" class="btn btn-primary">Neues Team hinterlegen</a>
+
 @endsection
