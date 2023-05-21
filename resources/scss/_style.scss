@@ -5,9 +5,17 @@
 
 html body {
     margin: 0;
-    background-color: var(--col-primary);
+    background-color: var(--col-secondary);
     color: var(--col-primary-inv);
     font-family: "Roboto Light", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & > * {
+        flex-grow: 100;
+    }
 }
 
 .container {
@@ -16,24 +24,53 @@ html body {
     padding: 0 1rem;
 }
 
+.footer {
+    flex-grow: 0;
+    background: var(--col-secondary);
+    min-height: .06vh;
+    padding: 2rem 0;
+    color: var(--col-primary-inv);
 
-.footer-navigation {
-    display: flex;
-    justify-content: center;
-    border: 1px solid var(--bg-special);
-    border-left: 0 none;
-    border-right: 0 none;
-    color: rgb(130, 130, 130);
-
-    ul {
-        padding: 0
-    }
-
-    li {
-        display: inline-block;
-        list-style: none;
+    h2 {
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: bold;
     }
 }
+
+.footer-navigation {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--col-primary-inv);
+    border-left: 0 none;
+    border-right: 0 none;
+
+
+    a {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 3rem;
+        margin: 1em 1.6em;
+        text-transform: uppercase;
+
+        &:hover {
+            color: var(--col-special);
+        }
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+}
+
+.copyright {
+    @extend .about;
+    padding: 1.5em 1em;
+}
+
 
 .skip2content {
     left: 50%;
@@ -52,25 +89,14 @@ html body {
 
 
 .site-heading {
-    background: url("../img/page-header-default.jpg") rgb(30, 160, 40);
+    background-image: url("../img/page-header-default.jpg");
     color: var(--col-primary);
     padding: calc(var(--header-height) + 3em) 2em 3em;
 }
 
-.footer {
-    background-color: var(--bg-special);
-    color: var(--col-special);
-}
-
 .content {
-    background: var(--bg-primary);
+    background: var(--col-primary);
     position: relative;
-}
-
-.copyright {
-    display: flex;
-    justify-content: center;
-    padding: 1.5em 1em;
 }
 
 .form-field, .form-group {

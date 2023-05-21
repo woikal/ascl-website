@@ -1,110 +1,96 @@
-<x-forms.input/>
-<x-forms.textarea/>
+text
+<x-form-input type="text" name="test[input]"/>
+number
+<x-form-input type="number" name="test[number]"/>
+textarea
+<x-form-textarea name="test[textarea]"/>
 
 
-<fieldset class="mb-1">
-    <div class="row">
-        <legend class="col-sm-4 col-form-label pt-0">Radios</legend>
-        <div class="col-sm">
-            <div class="form-check form-check-inline">
-                <input id="uuid-00d6da2c-05c1-4b09-af91-fff0f6174539"
-                       type="radio"
-                       class="form-check-input"
-                       name="radio"
-                       aria-describedby="uuid-b4f15cde-3ffd-4c63-9e04-c6b9a3062779"
-                       checked="">
-                <label class="form-check-label" for="uuid-00d6da2c-05c1-4b09-af91-fff0f6174539">
-                    Option 1
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input id="uuid-eab4aa81-b865-4740-9453-4f222a8a3ad6"
-                       type="radio"
-                       class="form-check-input"
-                       name="radio"
-                       aria-describedby="uuid-b4f15cde-3ffd-4c63-9e04-c6b9a3062779">
-                <label class="form-check-label" for="uuid-eab4aa81-b865-4740-9453-4f222a8a3ad6">
-                    Option 2
-                </label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input id="uuid-2c740749-8ba9-4211-b4c7-6c8abab4992a"
-                       type="radio"
-                       class="form-check-input"
-                       name="radio"
-                       aria-describedby="uuid-b4f15cde-3ffd-4c63-9e04-c6b9a3062779">
-                <label class="form-check-label" for="uuid-2c740749-8ba9-4211-b4c7-6c8abab4992a">
-                    Option 3
-                </label>
-            </div>
-            <div id="uuid-b4f15cde-3ffd-4c63-9e04-c6b9a3062779" class="form-text">
-                Radio description
-            </div>
+<form>
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="email"
+               name="floating_email"
+               id="floating_email"
+               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+               placeholder=" "
+               required/>
+        <label for="floating_email"
+               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email
+            address</label>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="password"
+               name="floating_password"
+               id="floating_password"
+               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+               placeholder=" "
+               required/>
+        <label for="floating_password"
+               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+        <input type="password"
+               name="repeat_password"
+               id="floating_repeat_password"
+               class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+               placeholder=" "
+               required/>
+        <label for="floating_repeat_password"
+               class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm
+            password</label>
+    </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+            <input type="text"
+                   name="floating_first_name"
+                   id="floating_first_name"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" "
+                   required/>
+            <label for="floating_first_name"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">First
+                name</label>
+        </div>
+        <div class="relative z-0 w-full mb-6 group">
+            <input type="text"
+                   name="floating_last_name"
+                   id="floating_last_name"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" "
+                   required/>
+            <label for="floating_last_name"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Last
+                name</label>
         </div>
     </div>
-</fieldset>
-
-
-<fieldset class="mb-1">
-    <div class="row">
-        <legend class="col-sm-4 col-form-label pt-0">Multi-Range</legend>
-        <div class="col-sm">
-            <div class="form-multi-range lazyloaded"
-                 role="group"
-                 style="--low:0%;--high:100%"
-                 data-loadjs="[&quot;js/form-multi-range.js&quot;,&quot;form-multi-range&quot;]">
-                <label for="uuid-e6e1da48-c8fc-439b-87fb-cbb41d337bc1" class="visually-hidden">from</label>
-                <input type="range"
-                       id="uuid-e6e1da48-c8fc-439b-87fb-cbb41d337bc1"
-                       class="form-range"
-                       name="multirange"
-                       value="0"
-                       min="0"
-                       max="100"
-                       step="1"
-                       autocomplete="off">
-                <label for="uuid-6ed255d0-9773-42f4-aca2-648018083358" class="visually-hidden">to</label>
-                <input type="range"
-                       id="uuid-6ed255d0-9773-42f4-aca2-648018083358"
-                       class="form-range"
-                       name="multirange"
-                       value="100"
-                       min="0"
-                       max="100"
-                       step="1"
-                       autocomplete="off">
-            </div>
+    <div class="grid md:grid-cols-2 md:gap-6">
+        <div class="relative z-0 w-full mb-6 group">
+            <input type="tel"
+                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                   name="floating_phone"
+                   id="floating_phone"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" "
+                   required/>
+            <label for="floating_phone"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone
+                number (123-456-7890)</label>
+        </div>
+        <div class="relative z-0 w-full mb-6 group">
+            <input type="text"
+                   name="floating_company"
+                   id="floating_company"
+                   class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                   placeholder=" "
+                   required/>
+            <label for="floating_company"
+                   class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Company
+                (Ex. Google)</label>
         </div>
     </div>
-</fieldset>
-<fieldset>
-    <div class="row">
-        <legend class="col-sm-4 col-form-label">Multiple</legend>
-        <div class="col-sm">
-            <div class="row">
-                <div class="col-5">
-                    <div class="mb-1">
-                        <label for="uuid-6ef4d65a-0b25-49f2-a7a4-d9738b23f752"
-                               class="visually-hidden">PLZ</label>
-                        <input type="text"
-                               id="uuid-6ef4d65a-0b25-49f2-a7a4-d9738b23f752"
-                               class="form-control"
-                               name="zip"
-                               required="">
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="mb-1">
-                        <label for="uuid-bf0cbbd5-f2eb-4718-b384-81b97cdb44c3"
-                               class="visually-hidden">Ort</label>
-                        <input type="text"
-                               id="uuid-bf0cbbd5-f2eb-4718-b384-81b97cdb44c3"
-                               class="form-control"
-                               name="location"
-                               required="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</fieldset>
+    <button type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        Submit
+    </button>
+
+</form>

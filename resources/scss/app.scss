@@ -1,3 +1,6 @@
+@use "sass:math" as math;
+
+@import '~bootstrap/scss/bootstrap';
 
 :root {
     --col-primary: hsl(1, 5%, 10%);
@@ -8,13 +11,11 @@
     --col-special-inv: hsl(1, 10%, 70%);
 
     --header-height: 120px;
+    --sqrt: 1.41421356237;
 }
 
-// laravel/breeze authentication
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+@import 'mixins';
 @import 'style';
 @import 'header';
 @import 'go-top';
@@ -24,5 +25,6 @@
 
 // DEVELOPMENT
 div, nav, ul, header {
-    border: 1px dotted hsl(20, 100%, 50%);
+    // border: 1px dotted hsl(20, 100%, 50%);
 }
+

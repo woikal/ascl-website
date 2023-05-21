@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Location;
+use Faker\Core\Number;
 use Illuminate\Database\Seeder;
 
 class LocationSeeder extends Seeder
@@ -13,6 +15,6 @@ class LocationSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Location::factory()->make(5);
     }
 }

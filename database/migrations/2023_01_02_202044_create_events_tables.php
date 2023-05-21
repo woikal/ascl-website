@@ -50,9 +50,9 @@ class CreateEventsTables extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('event_id')->constrained();
-            $table->foreignId('player_id')->nullable()->constrained();
+           // $table->foreignId('player_id')->nullable()->constrained();
             $table->foreignId('registered_by_id')->nullable()->constrained('users');
-            $table->enum('status', ['requested', 'confirmed', 'canceled']);
+            $table->enum('status', ['nominated','applied', 'confirmed', 'canceled']);
             $table->string('forename');
             $table->string('surname');
             $table->string('nickname');
