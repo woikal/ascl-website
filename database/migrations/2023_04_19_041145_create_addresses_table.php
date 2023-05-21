@@ -24,6 +24,7 @@ class CreateAddressesTable extends Migration
             $table->string('country')->nullable();
             $table->decimal('latitude', 12, 9)->nullable();
             $table->decimal('longitude', 12, 9)->nullable();
+            $table->text('route')->nullable();
         });
     }
 

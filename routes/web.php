@@ -28,6 +28,8 @@ Route::get('event/{id}/anmelden', [EventParticipationController::class, 'create'
 Route::patch('teams/{team}/visibility', [TeamVisibilityController::class, 'update'])->name('teams.visibility');
 Route::resource('teams', TeamController::class)->except(['show']);
 
+Route::resource('addresses', AddressController::class)->except(['show', 'create', 'store']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

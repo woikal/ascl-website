@@ -15,6 +15,7 @@ class Address extends Model
         'zipcode',
         'city',
         'country',
+        'route'
     ];
 
     public function addressable(): MorphTo
