@@ -22,6 +22,11 @@ Route::get('/', function () {
 
 Route::resource('locations', LocationController::class);
 Route::resource('events', LocationController::class);
+Route::get('event/{id}/anmelden', [EventParticipationController::class, 'create']);
+
+
+Route::patch('teams/{team}/visibility', [TeamVisibilityController::class, 'update'])->name('teams.visibility');
+Route::resource('teams', TeamController::class)->except(['show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
